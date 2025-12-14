@@ -1,0 +1,163 @@
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.section-title {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.section-number {
+    font-size: 120px;
+    font-weight: 700;
+    opacity: 0.1;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about-name {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.about-description strong {
+    font-weight: 700;
+    opacity: 1;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-left: 2px solid #FFFFFF;
+    padding-left: 40px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-number {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.stat-label {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .about-stats {
+        flex-direction: row;
+        border-left: none;
+        border-top: 2px solid #FFFFFF;
+        padding-left: 0;
+        padding-top: 40px;
+    }
+
+    .stat-item {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 50px;
+    }
+
+    .section-number {
+        font-size: 80px;
+    }
+
+    .about-name {
+        font-size: 24px;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 50px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 36px;
+    }
+
+    .section-number {
+        font-size: 60px;
+    }
+
+    .about-header {
+        margin-bottom: 50px;
+    }
+
+    .about-name {
+        font-size: 20px;
+    }
+
+    .about-description {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .stat-number {
+        font-size: 40px;
+    }
+}

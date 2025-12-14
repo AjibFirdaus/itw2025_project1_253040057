@@ -1,0 +1,233 @@
+/* Brutalism Style */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    border-bottom: 2px solid #FFFFFF;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 1001;
+}
+
+.burger-toggle {
+    display: none;
+}
+
+.burger-icon {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+}
+
+.burger-icon span {
+    width: 30px;
+    height: 3px;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.navbar-sidebar {
+    display: block;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.navbar-menu li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-menu li a:hover {
+    opacity: 0.6;
+}
+
+.navbar-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FFFFFF;
+    transition: width 0.3s ease;
+}
+
+.navbar-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Main ct */
+#main-content {
+    margin-top: 80px;
+}
+
+/* Section Base*/
+section {
+    min-height: 100vh;
+    padding: 100px 60px;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.footer {
+    background-color: #000000;
+    border-top: 2px solid #FFFFFF;
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.footer-content p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+.footer-credits {
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+
+    .burger-icon {
+        display: flex;
+    }
+
+    .navbar-sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: #000000;
+        border-left: 2px solid #FFFFFF;
+        transition: right 0.4s ease;
+        z-index: 999;
+        padding-top: 80px;
+    }
+
+    .burger-toggle:checked ~ .navbar-sidebar {
+        right: 0;
+    }
+
+    .burger-toggle:checked ~ .burger-icon span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .burger-toggle:checked ~ .burger-icon span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-toggle:checked ~ .burger-icon span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 40px 30px;
+    }
+
+    .navbar-menu li {
+        border-bottom: 2px solid #FFFFFF;
+    }
+
+    .navbar-menu li a {
+        display: block;
+        padding: 20px 0;
+        font-size: 18px;
+    }
+
+    .navbar-menu li a::after {
+        display: none;
+    }
+
+    section {
+        padding: 80px 30px;
+    }
+
+    .footer {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .burger-icon span {
+        width: 25px;
+        height: 2px;
+    }
+
+    .navbar-sidebar {
+        width: 250px;
+    }
+
+    .navbar-menu {
+        padding: 30px 20px;
+    }
+
+    .navbar-menu li a {
+        font-size: 16px;
+        padding: 15px 0;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+}
